@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using OnlineEdu.DataAccess.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+/*veritabaný baglantýsýný burada verdýk appsettings.json tarafýnda sqlconnection isminde degiskene
+ atadýgýmýz ýcýn burada ýsmýný vermýs olduk*/
+builder.Services.AddDbContext<OnlineEduContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
+});
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

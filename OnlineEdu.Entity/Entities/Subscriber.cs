@@ -8,7 +8,7 @@ namespace OnlineEdu.Entity.Entities
 {
 	public class Subscriber
 	{
-		public int SubsciberId { get; set; }
+		public int SubscriberId { get; set; }
 		public string Email { get; set; }
 		public bool IsActive { get; set; }//aboneliği aktif mi değil mi diye yazıldı
 	}
